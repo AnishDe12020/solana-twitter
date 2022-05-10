@@ -37,4 +37,29 @@ describe("solana-twitter", () => {
     assert.equal(tweetAccount.content, "use rust");
     assert.ok(tweetAccount.timestamp);
   });
+
+  it("can send a new tweet without a topic", async () => {
+    // Call the "SendTweet" instruction.
+    const tweet = anchor.web3.Keypair.generate();
+    await program.rpc.sendTweet("", "gm wagmi", {
+      accounts: {
+        tweet: tweet.publicKey,
+        author: program.provider.wallet.publicKey,
+        systemProgram: anchor.web3.SystemProgram.programId,
+      },
+      signers: [tweet],
+    });
+
+    // Fetch the account details of the created tweet.
+    const tweetAccount = await program.account.tweet.fetch(tweet.publicKey);
+
+    // Ensure it has the right data.
+    assert.equal(
+      tweetAccount.author.toBase58(),
+      program.provider.wallet.publicKey.toBase58()
+    );
+    assert.equal(tweetAccount.topic, "");
+    assert.equal(tweetAccount.content, "gm wagmi");
+    assert.ok(tweetAccount.timestamp);
+  });
 });
