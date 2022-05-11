@@ -1,3 +1,4 @@
+import "solana-wallets-vue/styles.css";
 import "./main.css";
 
 import { createRouter, createWebHashHistory } from "vue-router";
