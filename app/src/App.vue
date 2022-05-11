@@ -24,9 +24,11 @@ initWorkspace();
     ></the-sidebar>
 
     <!-- Main -->
-    <main class="flex-1 border-r border-l ml-20 md:ml-64 min-h-screen">
+    <main
+      class="flex-1 border-r border-l border-tertiary ml-20 md:ml-64 min-h-screen"
+    >
       <header
-        class="flex space-x-6 items-center justify-between px-8 py-4 border-b"
+        class="flex space-x-6 items-center justify-between px-8 py-4 border-b border-tertiary"
       >
         <div class="text-xl font-bold" v-text="route.name"></div>
       </header>

@@ -48,12 +48,12 @@ const send = async () => {
 </script>
 
 <template>
-  <div v-if="connected" class="px-8 py-4 border-b">
+  <div v-if="connected" class="px-8 py-4 border-b border-tertiary">
     <!-- Content field. -->
     <textarea
       ref="textarea"
       rows="1"
-      class="text-xl w-full focus:outline-none resize-none mb-3"
+      class="text-xl w-full focus:outline-none resize-none mb-3 rounded-md bg-secondary px-4 py-2"
       placeholder="What's happening?"
       v-model="content"
     ></textarea>
@@ -64,7 +64,7 @@ const send = async () => {
         <input
           type="text"
           placeholder="topic"
-          class="text-pink-500 rounded-full pl-10 pr-4 py-2 bg-gray-100"
+          class="text-pink-500 rounded-full pl-10 pr-4 py-2 bg-secondary"
           :value="effectiveTopic"
           :disabled="forcedTopic"
           @input="topic = $event.target.value"
@@ -93,7 +93,7 @@ const send = async () => {
         <button
           class="text-white px-4 py-2 rounded-full font-semibold"
           :disabled="!canTweet"
-          :class="canTweet ? 'bg-pink-500' : 'bg-pink-300 cursor-not-allowed'"
+          :class="canTweet ? 'bg-pink-500' : 'bg-pink-400 cursor-not-allowed'"
           @click="send"
         >
           Tweet
@@ -102,7 +102,10 @@ const send = async () => {
     </div>
   </div>
 
-  <div v-else class="px-8 py-4 bg-gray-50 text-gray-500 text-center border-b">
+  <div
+    v-else
+    class="px-8 py-4 bg-gray-50 text-gray-500 text-center border-b border-tertiary"
+  >
     Connect your wallet to start tweeting...
   </div>
 </template>

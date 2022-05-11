@@ -21,7 +21,7 @@ const addTweet = (tweet) => tweets.value.push(tweet);
 
 <template>
   <!-- TODO: Check connected wallet -->
-  <div v-if="wallet" class="border-b px-8 py-4 bg-gray-50">
+  <div v-if="wallet" class="border-b px-8 py-4 bg-primary border-tertiary">
     {{ wallet.publicKey.toBase58() }}
   </div>
   <tweet-form @added="addTweet"></tweet-form>

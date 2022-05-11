@@ -9,7 +9,7 @@ const { connected } = useWallet();
   >
     <router-link
       :to="{ name: 'Home' }"
-      class="inline-block rounded-full hover:bg-gray-100 p-3 md:self-start"
+      class="inline-block rounded-full hover:bg-secondary p-3 md:self-start"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -28,14 +28,14 @@ const { connected } = useWallet();
     <div class="flex flex-col items-center md:items-stretch space-y-2">
       <router-link
         :to="{ name: 'Home' }"
-        class="rounded-full hover:bg-gray-100 p-3 md:w-full inline-flex items-center space-x-4"
+        class="rounded-full hover:bg-secondary p-3 md:w-full inline-flex items-center space-x-4"
         active-class="font-bold"
         v-slot="{ isActive }"
       >
         <svg
           v-if="isActive"
           xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 text-gray-700"
+          class="h-8 w-8 text-gray-300"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -46,7 +46,7 @@ const { connected } = useWallet();
         <svg
           v-else
           xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 text-gray-700"
+          class="h-8 w-8 text-gray-300"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -62,14 +62,14 @@ const { connected } = useWallet();
       </router-link>
       <router-link
         :to="{ name: 'Topics' }"
-        class="rounded-full hover:bg-gray-100 p-3 md:w-full inline-flex items-center space-x-4"
+        class="rounded-full hover:bg-secondary p-3 md:w-full inline-flex items-center space-x-4"
         active-class="font-bold"
         v-slot="{ isActive }"
       >
         <svg
           v-if="isActive"
           xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 text-gray-700"
+          class="h-8 w-8 text-gray-300"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -83,7 +83,7 @@ const { connected } = useWallet();
         <svg
           v-else
           xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 text-gray-700"
+          class="h-8 w-8 text-gray-300"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -99,14 +99,14 @@ const { connected } = useWallet();
       </router-link>
       <router-link
         :to="{ name: 'Users' }"
-        class="rounded-full hover:bg-gray-100 p-3 md:w-full inline-flex items-center space-x-4"
+        class="rounded-full hover:bg-secondary p-3 md:w-full inline-flex items-center space-x-4"
         active-class="font-bold"
         v-slot="{ isActive }"
       >
         <svg
           v-if="isActive"
           xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 text-gray-700"
+          class="h-8 w-8 text-gray-300"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -117,7 +117,7 @@ const { connected } = useWallet();
         <svg
           v-else
           xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 text-gray-700"
+          class="h-8 w-8 text-gray-300"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -135,14 +135,14 @@ const { connected } = useWallet();
       <router-link
         v-if="connected"
         :to="{ name: 'Profile' }"
-        class="rounded-full hover:bg-gray-100 p-3 md:w-full inline-flex items-center space-x-4"
+        class="rounded-full hover:bg-secondary p-3 md:w-full inline-flex items-center space-x-4"
         active-class="font-bold"
         v-slot="{ isActive }"
       >
         <svg
           v-if="isActive"
           xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 text-gray-700"
+          class="h-8 w-8 text-gray-300"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -155,7 +155,7 @@ const { connected } = useWallet();
         <svg
           v-else
           xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 text-gray-700"
+          class="h-8 w-8 text-gray-300"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -171,7 +171,7 @@ const { connected } = useWallet();
       </router-link>
     </div>
     <div class="fixed bottom-8 right-8 md:static w-48 md:w-full">
-      <wallet-multi-button></wallet-multi-button>
+      <wallet-multi-button :dark="true"></wallet-multi-button>
     </div>
   </aside>
 </template>
